@@ -6,8 +6,6 @@ apt_repository "newrelic" do
   components [ "non-free" ]
   keyserver 'pgp.mit.edu'
   key node[:newrelic][:key_id]
-  action :add
-  notifies :run, resources(:execute => "apt-get update"), :immediately
 end
 
 package "newrelic-sysmond" do
